@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Project: Big Interview AI
+  Status: Phase 3 (172-Day Engineering Cycle)
+  Strategic Foundation: Built upon a comprehensive 72-page Strategic Roadmap covering Market Positioning, Algorithmic Ethics, and Scalability.
+  
+  Note: Sections such as 'The Vision', 'FAQ', and 'Team' are integrated directly into the main application interface (Home) 
+  to ensure a seamless user experience and are accessible to crawlers as part of the core content.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Application / Landing Page -->
+  <url>
+    <loc>https://biginterview.ai/</loc>
+    <lastmod>2026-02-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Custom 404 Page (Professionally Designed) -->
+  <url>
+    <loc>https://biginterview.ai/404</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
