@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
-import { useState } from 'react';
-import logo from '../assets/Logo.svg';
-import ContactModal from '../components/ContactModal';
-import VisionModal from '../components/VisionModal';
-import FAQModal from '../components/FAQModal';
-import SEO from '../components/SEO';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import logo from "../assets/Logo.svg";
+import ContactModal from "../components/ContactModal";
+import VisionModal from "../components/VisionModal";
+import FAQModal from "../components/FAQModal";
+import SEO from "../components/SEO";
 
 interface Domain {
   name: string;
@@ -14,10 +14,30 @@ interface Domain {
 }
 
 const domains: Domain[] = [
-  { name: 'biginterview.ai', price: '$649', tier: 'Exclusive', link: 'https://www.godaddy.com/domainsearch/find?domainToCheck=biginterview.ai' },
-  { name: 'biginterview.co', price: '$249', tier: 'Premium+', link: 'https://www.godaddy.com/domainsearch/find?domainToCheck=biginterview.co' },
-  { name: 'biginterview.app', price: '$149', tier: 'Premium', link: 'https://www.godaddy.com/domainsearch/find?domainToCheck=biginterview.app' },
-  { name: 'biginterview.info', price: '$49', tier: 'Premium', link: 'http://godaddy.com/domainsearch/find?domainToCheck=biginterview.info' },
+  {
+    name: "biginterview.ai",
+    price: "$99",
+    tier: "Exclusive",
+    link: "https://www.godaddy.com/domainsearch/find?domainToCheck=biginterview.ai",
+  },
+  {
+    name: "biginterview.co",
+    price: "$49",
+    tier: "Premium+",
+    link: "https://www.godaddy.com/domainsearch/find?domainToCheck=biginterview.co",
+  },
+  {
+    name: "biginterview.app",
+    price: "$49",
+    tier: "Premium",
+    link: "https://www.godaddy.com/domainsearch/find?domainToCheck=biginterview.app",
+  },
+  {
+    name: "biginterview.info",
+    price: "$49",
+    tier: "Premium",
+    link: "http://godaddy.com/domainsearch/find?domainToCheck=biginterview.info",
+  },
 ];
 
 export default function Home() {
@@ -28,13 +48,20 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#030303] text-[#EAE7D6] font-sans overflow-x-hidden relative flex flex-col selection:bg-[#EAE7D6] selection:text-black">
       <SEO />
-      
+
       {/* Modals */}
-      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
-      <VisionModal isOpen={isVisionOpen} onClose={() => setIsVisionOpen(false)} daysLeft={0} />
-      <FAQModal 
-        isOpen={isFAQOpen} 
-        onClose={() => setIsFAQOpen(false)} 
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
+      <VisionModal
+        isOpen={isVisionOpen}
+        onClose={() => setIsVisionOpen(false)}
+        daysLeft={0}
+      />
+      <FAQModal
+        isOpen={isFAQOpen}
+        onClose={() => setIsFAQOpen(false)}
         onOpenContact={() => setIsContactOpen(true)}
       />
 
@@ -46,18 +73,18 @@ export default function Home() {
 
       {/* Navbar */}
       <nav className="w-full flex justify-between items-center px-6 lg:px-12 py-10 z-30 relative max-w-[1400px] mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }} 
-          animate={{ opacity: 1, y: 0 }} 
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="w-10 lg:w-12 mix-blend-difference"
         >
           <img src={logo} alt="Logo" className="w-full h-auto opacity-100" />
         </motion.div>
-        
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
           className="flex items-center space-x-3"
         >
@@ -70,7 +97,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="flex-grow flex flex-col items-center px-4 lg:px-8 w-full max-w-[1000px] mx-auto z-10 py-16 lg:py-24">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
@@ -80,7 +107,8 @@ export default function Home() {
             The Digital Real Estate
           </h2>
           <h1 className="font-serif text-5xl lg:text-8xl tracking-tight leading-[1.1] text-[#EAE7D6]">
-            Premium <span className="text-[#969385] italic font-light">Assets</span>
+            Premium{" "}
+            <span className="text-[#969385] italic font-light">Assets</span>
           </h1>
           <div className="mt-8 w-px h-16 bg-gradient-to-b from-white/20 to-transparent mx-auto"></div>
         </motion.div>
@@ -88,7 +116,7 @@ export default function Home() {
         {/* Domain List - Ledger Layout */}
         <div className="flex flex-col w-full mb-32">
           {/* Table Header */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
@@ -115,9 +143,24 @@ export default function Home() {
             © 2026 Acquisition Portal
           </p>
           <div className="flex space-x-10 text-[9px] font-bold tracking-[0.2em] text-[#6B7280] uppercase">
-            <button onClick={() => setIsContactOpen(true)} className="hover:text-[#EAE7D6] transition-colors duration-500">Contact</button>
-            <button onClick={() => setIsVisionOpen(true)} className="hover:text-[#EAE7D6] transition-colors duration-500">Vision</button>
-            <button onClick={() => setIsFAQOpen(true)} className="hover:text-[#EAE7D6] transition-colors duration-500">FAQ</button>
+            <button
+              onClick={() => setIsContactOpen(true)}
+              className="hover:text-[#EAE7D6] transition-colors duration-500"
+            >
+              Contact
+            </button>
+            <button
+              onClick={() => setIsVisionOpen(true)}
+              className="hover:text-[#EAE7D6] transition-colors duration-500"
+            >
+              Vision
+            </button>
+            <button
+              onClick={() => setIsFAQOpen(true)}
+              className="hover:text-[#EAE7D6] transition-colors duration-500"
+            >
+              FAQ
+            </button>
           </div>
         </div>
       </footer>
@@ -126,17 +169,21 @@ export default function Home() {
 }
 
 function DomainRow({ domain, index }: { domain: Domain; index: number }) {
-  const isExclusive = domain.tier === 'Exclusive';
+  const isExclusive = domain.tier === "Exclusive";
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+      transition={{
+        duration: 0.8,
+        delay: index * 0.15,
+        ease: [0.16, 1, 0.3, 1],
+      }}
       className="group block relative"
     >
-      <a 
+      <a
         href={domain.link}
         target="_blank"
         rel="noopener noreferrer"
@@ -154,20 +201,26 @@ function DomainRow({ domain, index }: { domain: Domain; index: number }) {
               <span className="w-1 h-1 bg-white/20 rounded-full"></span>
             )}
           </div>
-          <h3 className={`font-serif text-2xl lg:text-4xl tracking-tight transition-all duration-500
-            ${isExclusive ? 'text-[#EAE7D6] group-hover:translate-x-2' : 'text-[#D1D5DB] group-hover:text-[#EAE7D6] group-hover:translate-x-2'}
-          `}>
+          <h3
+            className={`font-serif text-2xl lg:text-4xl tracking-tight transition-all duration-500
+            ${isExclusive ? "text-[#EAE7D6] group-hover:translate-x-2" : "text-[#D1D5DB] group-hover:text-[#EAE7D6] group-hover:translate-x-2"}
+          `}
+          >
             {domain.name}
           </h3>
         </div>
 
         {/* 2. Classification */}
         <div className="w-full md:w-1/4 md:text-center mb-4 md:mb-0 z-10 pl-14 md:pl-0">
-          <span className={`inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase rounded-sm border transition-colors duration-500
-            ${isExclusive 
-              ? 'border-[#EAE7D6]/30 text-[#EAE7D6] bg-white/[0.02] group-hover:border-[#EAE7D6]' 
-              : 'border-white/10 text-[#969385] group-hover:border-white/30 group-hover:text-[#D1D5DB]'}
-          `}>
+          <span
+            className={`inline-block px-3 py-1 text-[9px] tracking-[0.2em] uppercase rounded-sm border transition-colors duration-500
+            ${
+              isExclusive
+                ? "border-[#EAE7D6]/30 text-[#EAE7D6] bg-white/[0.02] group-hover:border-[#EAE7D6]"
+                : "border-white/10 text-[#969385] group-hover:border-white/30 group-hover:text-[#D1D5DB]"
+            }
+          `}
+          >
             {domain.tier}
           </span>
         </div>
@@ -175,21 +228,25 @@ function DomainRow({ domain, index }: { domain: Domain; index: number }) {
         {/* 3. Valuation & Action */}
         <div className="w-full md:w-1/4 flex items-center justify-between md:justify-end z-10 pl-14 md:pl-0">
           <div className="flex flex-col md:items-end mr-6 md:mr-8 transition-transform duration-500 group-hover:-translate-x-2">
-            <span className="md:hidden text-[9px] tracking-widest uppercase text-[#6B7280] mb-1">Valuation</span>
-            <p className="text-xl lg:text-2xl font-light text-[#EAE7D6] tracking-wide">{domain.price}</p>
+            <span className="md:hidden text-[9px] tracking-widest uppercase text-[#6B7280] mb-1">
+              Valuation
+            </span>
+            <p className="text-xl lg:text-2xl font-light text-[#EAE7D6] tracking-wide">
+              {domain.price}
+            </p>
           </div>
-          
+
           {/* Hover Arrow Indicator */}
           <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-50 group-hover:opacity-100 group-hover:border-[#EAE7D6] group-hover:bg-[#EAE7D6] transition-all duration-500">
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              width="14" 
-              height="14" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              stroke="currentColor" 
-              strokeWidth="2" 
-              strokeLinecap="round" 
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
               strokeLinejoin="round"
               className="text-[#EAE7D6] group-hover:text-black transition-colors duration-500 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             >
